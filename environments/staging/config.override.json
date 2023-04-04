@@ -1,0 +1,33 @@
+{
+  "android": {
+    "codepush": {
+      "productionKey": "",
+      "stagingKey": ""
+    },
+    "id": ""
+  },
+  "appInfo": {
+    "name": "RNStaterKit"
+  },
+  "deepLink": {
+    "appScheme": "rnstarterkit",
+    "prefixes": ["", "rnstarterkit://"]
+  },
+  "fb": {
+    "id": ""
+  },
+  "google": {
+    "reverseClientId": "",
+    "webClientId": ""
+  },
+  "ios": {
+    "codepush": {
+      "productionKey": "",
+      "stagingKey": ""
+    },
+    "id": ""
+  },
+  "sentry": {
+    "dns": ""
+  }
+}

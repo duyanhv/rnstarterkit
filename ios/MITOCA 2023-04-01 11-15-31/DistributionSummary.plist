@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MITOCA.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>bitcode</key>
+			<false/>
+			<key>buildNumber</key>
+			<string>25</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>616D5ABF930EA32FD9EF101E74B704F8770CA678</string>
+				<key>dateExpires</key>
+				<string>13/03/2024</string>
+				<key>type</key>
+				<string>Cloud Managed Apple Distribution</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>bitcode</key>
+					<false/>
+					<key>buildNumber</key>
+					<string>25</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>616D5ABF930EA32FD9EF101E74B704F8770CA678</string>
+						<key>dateExpires</key>
+						<string>13/03/2024</string>
+						<key>type</key>
+						<string>Cloud Managed Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>hermes.framework</string>
+					<key>symbols</key>
+					<true/>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>5HD7SKZX52</string>
+						<key>name</key>
+						<string>Kyogoku, Inc.</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>1.3.1</string>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>5HD7SKZX52.jp.vertex-g.businessmatching</string>
+				<key>aps-environment</key>
+				<string>production</string>
+				<key>beta-reports-active</key>
+				<true/>
+				<key>com.apple.developer.team-identifier</key>
+				<string>5HD7SKZX52</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>MITOCA.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>4e0d2e83-adf0-405d-b9ff-7f85260fdb2b</string>
+				<key>dateExpires</key>
+				<string>13/03/2024</string>
+				<key>name</key>
+				<string>iOS Team Store Provisioning Profile: jp.vertex-g.businessmatching</string>
+			</dict>
+			<key>symbols</key>
+			<true/>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>5HD7SKZX52</string>
+				<key>name</key>
+				<string>Kyogoku, Inc.</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.3.1</string>
+		</dict>
+	</array>
+</dict>
+</plist>

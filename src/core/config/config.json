@@ -1,0 +1,44 @@
+{
+  "android": {
+    "codepush": {
+      "productionKey": "",
+      "stagingKey": ""
+    },
+    "id": ""
+  },
+  "appInfo": {
+    "author": "Duy Anh Vu",
+    "build": "1",
+    "copyright": "Copyright ©",
+    "name": "RNStaterKit",
+    "privacyPolicyUrl": "",
+    "tosUrl": "",
+    "version": "0.0.1"
+  },
+  "dateFormat": "DD/MM/YYYY",
+  "datetimeFormat": "DD/MM/YYYY HH:mm",
+  "deepLink": {
+    "appScheme": "",
+    "prefixes": []
+  },
+  "defaultCountryCode": "VN",
+  "defaultLang": "vi",
+  "fb": {
+    "id": ""
+  },
+  "google": {
+    "reverseClientId": "",
+    "webClientId": ""
+  },
+  "ios": {
+    "codepush": {
+      "productionKey": "",
+      "stagingKey": ""
+    },
+    "id": ""
+  },
+  "sentry": {
+    "dns": ""
+  },
+  "timeFormat": "HH:mm"
+}

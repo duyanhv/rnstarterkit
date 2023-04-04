@@ -1,0 +1,18 @@
+{
+  "back": "Back",
+  "cancel": "Cancel",
+  "components": "Components",
+  "confirm": "Confirm",
+  "confirmation": "Confirmation",
+  "error": "Error",
+  "invalid": "Invalid",
+  "invalidDate": "Invalid date",
+  "noInternetConnection": "No Internet Connection",
+  "required": "Required",
+  "restart": "Restart",
+  "select": "Select",
+  "settings": "Settings",
+  "unknownError": "Something wrong happened",
+  "updateRestartConfirmation": "A new update has been installed. Please restart for the changes to take effect",
+  "warning": "Warning"
+}
