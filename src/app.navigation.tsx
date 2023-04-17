@@ -2,24 +2,30 @@
 import React from 'react';
 import {NavigationContainer, LinkingOptions} from '@react-navigation/native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
+import {TransitionSpecs, createStackNavigator} from '@react-navigation/stack';
 import {useTranslation} from 'react-i18next';
 import {Icon} from '@core/components';
 import {useAppTheme, useAuth} from '@core/contexts';
-import {SCREEN_NAME} from '@app/app.constants';
+import {MODAL_SCREEN_NAME, SCREEN_NAME} from '@app/app.constants';
 import {trackScreen} from '@core/analytics';
 import {config} from '@core/config';
 import {
+  CourseDetailScreen,
+  CoursesScreen,
   ForgotPasswordScreen,
   HomeScreen,
   SettingsScreen,
   SignInPhoneNoScreen,
   SignInScreen,
   WebViewScreen,
+  PodCastScreen,
 } from '@app/screens';
+import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
+import {PodCastDetailScreen} from '@app/screens/modal';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
+const StackSharedElement = createSharedElementStackNavigator();
 
 interface TabItem {
   name: string;
@@ -33,17 +39,46 @@ interface StackItem {
   name: string;
   component: React.FunctionComponent;
 }
-
+const Courses = () => {
+  return (
+    <StackSharedElement.Navigator screenOptions={{headerShown: false}} initialRouteName={SCREEN_NAME.COURSES}>
+      <StackSharedElement.Screen name={SCREEN_NAME.COURSES} key={SCREEN_NAME.COURSES} component={CoursesScreen} />
+      <StackSharedElement.Screen
+        sharedElements={(route, otherRoute, showing) => {
+          const {item} = route.params;
+          return [`item.${item.id}.photo`];
+        }}
+        name={SCREEN_NAME.COURSE_DETAIL}
+        key={SCREEN_NAME.COURSE_DETAIL}
+        component={CourseDetailScreen}
+      />
+    </StackSharedElement.Navigator>
+  );
+};
 const MainTabs = (): JSX.Element => {
   const {t} = useTranslation('common');
   const {appTheme} = useAppTheme();
   const tabItems: TabItem[] = [
     {
       name: SCREEN_NAME.HOME,
-      title: 'Home',
+      title: t('home'),
       icon: 'view-dashboard-outline',
       iconFocused: 'view-dashboard',
       component: HomeScreen,
+    },
+    {
+      name: SCREEN_NAME.COURSES,
+      title: t('courses'),
+      icon: 'book-open-page-variant-outline',
+      iconFocused: 'book-open-page-variant',
+      component: Courses,
+    },
+    {
+      name: SCREEN_NAME.POD_CASTS,
+      title: t('pod-casts'),
+      icon: 'play-circle',
+      iconFocused: 'play-circle-outline',
+      component: PodCastScreen,
     },
     {
       name: SCREEN_NAME.SETTINGS,
@@ -54,7 +89,11 @@ const MainTabs = (): JSX.Element => {
     },
   ];
   return (
-    <Tab.Navigator shifting initialRouteName={SCREEN_NAME.HOME} screenOptions={{tabBarColor:'#000'}}>
+    <Tab.Navigator
+      labeled={false}
+      shifting
+      initialRouteName={SCREEN_NAME.HOME}
+      barStyle={{backgroundColor: appTheme.colors.primary}}>
       {tabItems.map((tabItem, index) => (
         <Tab.Screen
           key={tabItem.name}
@@ -62,14 +101,10 @@ const MainTabs = (): JSX.Element => {
           component={tabItem.component}
           options={{
             title: tabItem.title,
-
             tabBarIcon: (iconProps) => {
               const {focused, color} = iconProps;
               return <Icon name={focused ? tabItem.iconFocused : tabItem.icon} color={color} size={25} />;
             },
-            tabBarColor: appTheme.colors.primary,
-            tabBarBadge: index === 0 ? 10 : undefined,
-
           }}
         />
       ))}
@@ -81,6 +116,7 @@ export const AppNavigation = (): JSX.Element => {
   const {auth} = useAuth();
   const routeNameRef = React.useRef();
   const navigationRef = React.useRef();
+  const {appTheme} = useAppTheme();
 
   const stackItems: StackItem[] = [
     {
@@ -147,6 +183,23 @@ export const AppNavigation = (): JSX.Element => {
             options={{header: () => <></>}}
           />
         ))}
+        <Stack.Group
+          screenOptions={{
+            presentation: 'modal',
+            headerStyle: {
+              backgroundColor: appTheme.colors.background,
+              borderBottomWidth: 0,
+              shadowRadius: 0,
+              shadowOffset: {height: 0, width: 0},
+            },
+            headerTintColor: appTheme.colors.text,
+          }}>
+          <Stack.Screen
+            name={MODAL_SCREEN_NAME.POD_CAST_DETAIL}
+            options={{title: 'The Creative Boom Podcast'}}
+            component={PodCastDetailScreen}
+          />
+        </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
   );

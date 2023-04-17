@@ -18,8 +18,9 @@ export * from './datetime-picker-input/datetime-picker-input.component';
 export * from './form-input/form-input.component';
 export * from './icon/icon.component';
 export * from './loading-modal/loading-modal.component';
+export * from './section-header/section-header.component'
 
-export { StatusBar, Alert, ScrollView, Pressable, Image } from 'react-native';
+export { StatusBar, Alert, ScrollView, Pressable, Image, FlatList, TouchableOpacity } from 'react-native';
 export { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 export {
 	Provider as PaperProvider,
@@ -36,4 +37,5 @@ export {
 	Switch,
 	IconButton,
 	Menu,
+	ProgressBar,
 } from 'react-native-paper';

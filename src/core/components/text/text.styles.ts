@@ -30,6 +30,6 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   p: {
-    fontSize: 12,
+    fontSize: 9,
   },
 });

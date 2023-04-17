@@ -65,6 +65,12 @@ export const COLORS_LOOKUP: {[id: string]: Color} = {
     darkColor: '#BCE29E',
     text: 'Green',
   },
+  GRAY: {
+	id: 'GRAY',
+    color: '#EFEFEF',
+    darkColor: '#7F7C82',
+    text: 'Gray',
+  }
 };
 export const COLORS = Object.keys(COLORS_LOOKUP).map((key: string) => COLORS_LOOKUP[key]);
 export const LIGHT_BACKGROUND_COLOR = '#fff';
@@ -75,9 +81,9 @@ export const DEFAULT_APP_THEME: AppThemeState = {
   useSystemTheme: true,
   darkMode: false,
   theme: 'light',
-  primaryColorId: COLORS_LOOKUP.CYAN.id,
+  primaryColorId: COLORS_LOOKUP.ORANGE.id,
   colors: {
-    primary: COLORS_LOOKUP.CYAN.color,
+    primary: COLORS_LOOKUP.ORANGE.color,
     warning: COLORS_LOOKUP.ORANGE.color,
     error: COLORS_LOOKUP.RED.color,
     success: COLORS_LOOKUP.GREEN.color,

@@ -7,7 +7,7 @@ module.exports = {
   },
   plugins: [
     [
-      require.resolve('babel-plugin-module-resolver'),
+      'module-resolver',
       {
         root: ['./src/'],
         alias: {
@@ -20,5 +20,6 @@ module.exports = {
         },
       },
     ],
+    'react-native-reanimated/plugin',
   ],
 };

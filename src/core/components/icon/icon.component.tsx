@@ -4,5 +4,5 @@ import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export type IconProps = React.ComponentProps<typeof MCIcon>;
 export const Icon = (props: IconProps): JSX.Element => {
-  return <MCIcon {...props} />;
+  return <MCIcon {...props} size={props.size? props.size: 25} />;
 };

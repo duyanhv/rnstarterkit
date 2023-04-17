@@ -7,7 +7,7 @@ export const SettingsScreen = (): JSX.Element => {
   const {t} = useTranslation('settings');
   return (
     <Layout headerTitle={t('common:settings') as string}>
-      <ScrollView>
+      <ScrollView style={{paddingHorizontal:10}}>
         <Profile />
         <Divider />
         <ThemeSetting />

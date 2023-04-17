@@ -5,6 +5,7 @@ import {useIsFocused, useNavigation} from '@react-navigation/native';
 import {useAppTheme, DARK_BACKGROUND_COLOR, LIGHT_BACKGROUND_COLOR} from '@core/contexts';
 import {styles} from './layout.styles';
 import {InternetConnection} from '../internet-connection/internet-connection.component';
+import {View} from '@app/core/components';
 
 export interface LayoutProps {
   children?: React.ReactNode;
@@ -38,7 +39,7 @@ export const Layout = (props: LayoutProps): JSX.Element => {
     style,
   } = props;
   const isFocused = useIsFocused();
-  const appHeaderColor = headerColor || (appTheme.theme === 'dark' ? theme.colors.surface : theme.colors.primary);
+  const appHeaderColor = headerColor || appTheme.colors.background;
   const [keyboardHeight, setKeyboardHeight] = useState(0);
 
   const goBack = (): void => {
@@ -109,18 +110,7 @@ export const Layout = (props: LayoutProps): JSX.Element => {
             backgroundColor: appTheme.theme === 'light' ? LIGHT_BACKGROUND_COLOR : DARK_BACKGROUND_COLOR,
           },
         ]}>
-        <Surface
-          style={[
-            styles.flex,
-            style,
-            Platform.OS === 'ios'
-              ? {
-                  marginBottom: keyboardHeight,
-                }
-              : {},
-          ]}>
-          {children}
-        </Surface>
+        {children}
       </SafeAreaView>
       {showInternetConnection && <InternetConnection />}
     </>

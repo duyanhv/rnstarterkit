@@ -11,7 +11,7 @@ const Button = (props: React.ComponentProps<typeof RNButton>): JSX.Element => {
   const labelColorStyle: TextStyle =
     other.mode === 'contained'
       ? {
-          color: appTheme.theme === 'dark' ? DARK_BACKGROUND_COLOR : LIGHT_BACKGROUND_COLOR,
+          color: appTheme.colors.text,
         }
       : {};
   return (

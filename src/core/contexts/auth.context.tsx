@@ -53,7 +53,7 @@ const DEFAULT_AUTH: AuthState = {
   avatarUrl: '',
   displayName: '',
   signInType: 'EMAIL',
-  isSignedIn: false,
+  isSignedIn: true,
   initializing: true,
   isTester: false,
 };

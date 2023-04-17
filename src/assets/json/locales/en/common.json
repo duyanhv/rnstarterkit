@@ -14,5 +14,9 @@
   "settings": "Settings",
   "unknownError": "Something wrong happened",
   "updateRestartConfirmation": "A new update has been installed. Please restart for the changes to take effect",
-  "warning": "Warning"
+  "warning": "Warning",
+  "search": "Search",
+  "start":"Start",
+  "courses": "Courses",
+  "all": "All"
 }

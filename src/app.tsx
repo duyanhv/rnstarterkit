@@ -22,7 +22,8 @@ import {i18next} from './i18n';
 import {AppNavigation} from './app.navigation';
 import {MD3DarkTheme} from 'react-native-paper';
 import {Provider} from 'react-redux';
-import { store } from '@app/store/store';
+import {store} from '@app/store/store';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 export const BaseApp = (): JSX.Element => {
   const {auth} = useAuth();
@@ -46,10 +47,12 @@ export const BaseApp = (): JSX.Element => {
   }, [language]);
 
   return (
-    <PaperProvider theme={theme}>
-      <AppNavigation />
-      <LoadingModal loading={loading} />
-    </PaperProvider>
+    <GestureHandlerRootView style={{flex: 1}}>
+      <PaperProvider theme={theme}>
+        <AppNavigation />
+        <LoadingModal loading={loading} />
+      </PaperProvider>
+    </GestureHandlerRootView>
   );
 };
 
